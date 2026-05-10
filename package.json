@@ -61,10 +61,10 @@
   "homepage": "https://floopy.ai/docs/sdk/node",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/floopy/floopy-sdk-node.git"
+    "url": "git+https://github.com/FloopyAI/floopy-node.git"
   },
   "bugs": {
-    "url": "https://github.com/floopy/floopy-sdk-node/issues"
+    "url": "https://github.com/FloopyAI/floopy-node/issues"
   },
   "author": "Floopy",
   "license": "Apache-2.0",
