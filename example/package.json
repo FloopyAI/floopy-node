@@ -1,0 +1,25 @@
+{
+  "name": "floopy-sdk-examples",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "chat": "tsx chat.ts",
+    "chat:stream": "tsx chat-stream.ts",
+    "embeddings": "tsx embeddings.ts",
+    "feedback": "tsx feedback.ts",
+    "decisions:list": "tsx decisions-list.ts",
+    "export": "tsx export-decisions.ts",
+    "experiments:create": "tsx experiments-create.ts",
+    "constraints": "tsx constraints.ts",
+    "routing:explain": "tsx routing-explain.ts"
+  },
+  "dependencies": {
+    "floopy-sdk": "file:..",
+    "dotenv": "^17.4.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.0"
+  }
+}

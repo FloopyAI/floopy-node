@@ -1,0 +1,75 @@
+{
+  "name": "floopy-sdk",
+  "version": "0.1.0",
+  "description": "Official Floopy AI Gateway SDK for Node/TypeScript. Drop-in replacement for the openai SDK with cache, audit, experiments, and security on top.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.12.1",
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "openai": "^6.37.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "msw": "^2.14.5",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.0",
+    "vitest": "^4.1.5"
+  },
+  "keywords": [
+    "floopy",
+    "openai",
+    "ai",
+    "gateway",
+    "llm",
+    "sdk",
+    "typescript",
+    "anthropic",
+    "gemini"
+  ],
+  "homepage": "https://floopy.ai/docs/sdk/node",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/floopy/floopy-sdk-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/floopy/floopy-sdk-node/issues"
+  },
+  "author": "Floopy",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

@@ -1,0 +1,13 @@
+src/
+test/
+example/
+tsconfig.json
+tsconfig.build.json
+tsup.config.ts
+vitest.config.ts
+.npmignore
+.editorconfig
+*.tsbuildinfo
+node_modules/
+.env
+.env.*

@@ -1,0 +1,15 @@
+export const ENDPOINTS = {
+  FEEDBACK: "/feedback",
+  DECISIONS: "/decisions",
+  DECISION_BY_ID: (id: string) => `/decisions/${encodeURIComponent(id)}`,
+  EXPERIMENTS: "/experiments",
+  EXPERIMENT_RESULTS: (id: string) => `/experiments/${encodeURIComponent(id)}/results`,
+  EXPERIMENT_ROLLBACK: (id: string) => `/experiments/${encodeURIComponent(id)}/rollback`,
+  CONSTRAINTS: "/constraints",
+  EXPORT_DECISIONS: "/export/decisions",
+  ROUTING_EXPLAIN: "/routing/explain",
+  EVALUATIONS: "/evaluations",
+  EVALUATION_BY_ID: (id: string) => `/evaluations/${encodeURIComponent(id)}`,
+  EVALUATION_RESULTS: (id: string) => `/evaluations/${encodeURIComponent(id)}/results`,
+  EVALUATION_CANCEL: (id: string) => `/evaluations/${encodeURIComponent(id)}/cancel`,
+} as const;
