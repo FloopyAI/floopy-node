@@ -6,6 +6,13 @@ project adheres to [Semantic Versioning](https://semver.org/).
 
 Releases are produced by `release-please` from Conventional Commits.
 
+## [0.2.0](https://github.com/FloopyAI/floopy-node/compare/floopy-sdk-v0.1.0...floopy-sdk-v0.2.0) (2026-05-10)
+
+
+### Added
+
+* new node SDK initial commit ([f2b7b29](https://github.com/FloopyAI/floopy-node/commit/f2b7b2993e703bff9229517918a509fa97518cbf))
+
 ## [Unreleased]
 
 ### Added
