@@ -6,6 +6,19 @@ project adheres to [Semantic Versioning](https://semver.org/).
 
 Releases are produced by `release-please` from Conventional Commits.
 
+## [0.3.0](https://github.com/FloopyAI/floopy-node/compare/floopy-sdk-v0.2.1...floopy-sdk-v0.3.0) (2026-05-17)
+
+
+### Added
+
+* add sessions.get() to restore a stored conversation ([d9da600](https://github.com/FloopyAI/floopy-node/commit/d9da600333c2fe1fa695c366e6928d2d2e784788))
+* add sessions.get() to restore a stored conversation ([36d5b2a](https://github.com/FloopyAI/floopy-node/commit/36d5b2ab9cd0bb0894798029f551fca639f55b36))
+
+
+### Dependencies
+
+* bump openai from 6.37.0 to 6.38.0 ([fcc0f98](https://github.com/FloopyAI/floopy-node/commit/fcc0f98ce2210be4c8bd56c419835aa7d7c05c71))
+
 ## [0.2.1](https://github.com/FloopyAI/floopy-node/compare/floopy-sdk-v0.2.0...floopy-sdk-v0.2.1) (2026-05-10)
 
 
