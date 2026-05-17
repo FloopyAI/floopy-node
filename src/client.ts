@@ -9,6 +9,7 @@ import { ExperimentsResource } from "./resources/experiments.js";
 import { ExportResource } from "./resources/export.js";
 import { FeedbackResource } from "./resources/feedback.js";
 import { RoutingResource } from "./resources/routing.js";
+import { SessionsResource } from "./resources/sessions.js";
 import type { FloopyClientOptions } from "./types/shared.js";
 
 export class Floopy {
@@ -23,6 +24,7 @@ export class Floopy {
   readonly export: ExportResource;
   readonly evaluations: EvaluationsResource;
   readonly routing: RoutingResource;
+  readonly sessions: SessionsResource;
 
   constructor(options: FloopyClientOptions) {
     this._http = FloopyHttp.fromClientOptions(options);
@@ -33,6 +35,7 @@ export class Floopy {
     this.export = new ExportResource(this._http);
     this.evaluations = new EvaluationsResource(this._http);
     this.routing = new RoutingResource(this._http);
+    this.sessions = new SessionsResource(this._http);
   }
 
   /**

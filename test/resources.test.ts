@@ -249,6 +249,72 @@ describe("EvaluationsResource", () => {
   });
 });
 
+describe("SessionsResource", () => {
+  it("maps wire format to camelCase and hits the encoded path", async () => {
+    let captured: { method: string; path: string } | undefined;
+    const c = makeClient(async (req) => {
+      const u = new URL(req.url);
+      captured = { method: req.method, path: u.pathname };
+      return new Response(
+        JSON.stringify({
+          session_id: "sess/1",
+          messages: [
+            { role: "user", content: "hi" },
+            { role: "assistant", content: "hello" },
+          ],
+          turn_count: 1,
+          turns: [
+            {
+              request_id: "r1",
+              created_at: "2026-05-17T10:00:00Z",
+              model: "gpt-4o",
+              provider: "openai",
+            },
+          ],
+        }),
+        { status: 200 },
+      );
+    });
+
+    const s = await c.sessions.get("sess/1");
+
+    expect(captured?.method).toBe("GET");
+    expect(captured?.path).toBe("/v1/session/sess%2F1");
+    expect(s.sessionId).toBe("sess/1");
+    expect(s.turnCount).toBe(1);
+    expect(s.messages).toEqual([
+      { role: "user", content: "hi" },
+      { role: "assistant", content: "hello" },
+    ]);
+    expect(s.turns).toEqual([
+      {
+        requestId: "r1",
+        createdAt: "2026-05-17T10:00:00Z",
+        model: "gpt-4o",
+        provider: "openai",
+      },
+    ]);
+  });
+
+  it("forwards per-request options (headers)", async () => {
+    let auth: string | null = null;
+    const c = makeClient(async (req) => {
+      auth = req.headers.get("x-trace");
+      return new Response(
+        JSON.stringify({ session_id: "s", messages: [], turn_count: 0, turns: [] }),
+        { status: 200 },
+      );
+    });
+
+    const s = await c.sessions.get("s", { headers: { "x-trace": "abc" } });
+
+    expect(auth).toBe("abc");
+    expect(s.turnCount).toBe(0);
+    expect(s.messages).toEqual([]);
+    expect(s.turns).toEqual([]);
+  });
+});
+
 function decisionWire(id: string) {
   return {
     request_id: id,

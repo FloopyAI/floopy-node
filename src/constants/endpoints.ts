@@ -2,6 +2,7 @@ export const ENDPOINTS = {
   FEEDBACK: "/feedback",
   DECISIONS: "/decisions",
   DECISION_BY_ID: (id: string) => `/decisions/${encodeURIComponent(id)}`,
+  SESSION_BY_ID: (id: string) => `/session/${encodeURIComponent(id)}`,
   EXPERIMENTS: "/experiments",
   EXPERIMENT_RESULTS: (id: string) => `/experiments/${encodeURIComponent(id)}/results`,
   EXPERIMENT_ROLLBACK: (id: string) => `/experiments/${encodeURIComponent(id)}/rollback`,
