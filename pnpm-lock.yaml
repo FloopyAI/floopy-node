@@ -10,7 +10,7 @@ importers:
     dependencies:
       openai:
         specifier: ^6.37.0
-        version: 6.37.0
+        version: 6.38.0
     devDependencies:
       '@types/node':
         specifier: ^22.14.0
@@ -814,8 +814,8 @@ packages:
   obug@2.1.1:
     resolution: {integrity: sha512-uTqF9MuPraAQ+IsnPf366RG4cP9RtUi7MLO1N3KEc+wb0a6yKpeL0lmk2IB1jY5KHPAlTc6T/JRdC/YqxHNwkQ==}
 
-  openai@6.37.0:
-    resolution: {integrity: sha512-0H5dEGFmmLv6KSd0W1w2nyL8WsLkX6yoLeQpU+dZAOuGcany5qkYQMmj35ZrKgb6yiyYqpUzFOpR8mZQkgqeEQ==}
+  openai@6.38.0:
+    resolution: {integrity: sha512-AoMplt2UalrpgUDMh3L09QWjNRlgJPipclQvA6sYAaeF6nHNBMgmikAZGmcYLn8on4d9sQY9Q8bOLfrBS7Lc8g==}
     hasBin: true
     peerDependencies:
       ws: ^8.18.0
@@ -1735,7 +1735,7 @@ snapshots:
 
   obug@2.1.1: {}
 
-  openai@6.37.0: {}
+  openai@6.38.0: {}
 
   outvariant@1.4.3: {}
 
