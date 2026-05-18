@@ -2,9 +2,11 @@ import type OpenAI from "openai";
 
 import { FloopyHttp } from "./http.js";
 import { createOpenAIDelegate } from "./openai-delegate.js";
+import { BatchesResource } from "./resources/batches.js";
 import { ConstraintsResource } from "./resources/constraints.js";
 import { DecisionsResource } from "./resources/decisions.js";
 import { EvaluationsResource } from "./resources/evaluations.js";
+import { FilesResource } from "./resources/files.js";
 import { ExperimentsResource } from "./resources/experiments.js";
 import { ExportResource } from "./resources/export.js";
 import { FeedbackResource } from "./resources/feedback.js";
@@ -25,6 +27,8 @@ export class Floopy {
   readonly evaluations: EvaluationsResource;
   readonly routing: RoutingResource;
   readonly sessions: SessionsResource;
+  readonly files: FilesResource;
+  readonly batches: BatchesResource;
 
   constructor(options: FloopyClientOptions) {
     this._http = FloopyHttp.fromClientOptions(options);
@@ -36,6 +40,8 @@ export class Floopy {
     this.evaluations = new EvaluationsResource(this._http);
     this.routing = new RoutingResource(this._http);
     this.sessions = new SessionsResource(this._http);
+    this.files = new FilesResource(this._http);
+    this.batches = new BatchesResource(this._http);
   }
 
   /**

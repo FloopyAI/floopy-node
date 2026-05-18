@@ -56,6 +56,20 @@ export type {
 } from "./types/evaluations.js";
 export type { RoutingExplainParams, RoutingExplainResult } from "./types/routing.js";
 export type { Session, SessionTurn } from "./types/sessions.js";
+export type {
+  FileObject,
+  FileList,
+  FileUploadParams,
+  FileListParams,
+} from "./types/files.js";
+export type {
+  Batch,
+  BatchList,
+  BatchCreateParams,
+  BatchListParams,
+  BatchRequestCounts,
+} from "./types/batches.js";
+export type { BatchRequestOptions } from "./resources/batch-options.js";
 
 // Re-export OpenAI types so consumers can `import type { ChatCompletion } from "floopy-sdk"`
 // without a separate `openai` import.

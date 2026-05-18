@@ -108,7 +108,12 @@ export class FloopyHttp {
   ): Promise<Response> {
     const url = this.buildUrl(path, init?.query);
     const headers = this.buildRequestHeaders(init?.requestOptions);
-    const bodyText = init?.body === undefined ? undefined : JSON.stringify(init.body);
+    // Multipart uploads (FormData) are forwarded as-is so the browser /
+    // undici runtime sets the `multipart/form-data` boundary itself —
+    // never JSON-encoded and never given an explicit Content-Type.
+    const formBody = init?.body instanceof FormData ? init.body : undefined;
+    const bodyText =
+      init?.body === undefined || formBody !== undefined ? undefined : JSON.stringify(init.body);
     if (bodyText !== undefined && headers[FLOOPY_HEADERS.CONTENT_TYPE] === undefined) {
       headers[FLOOPY_HEADERS.CONTENT_TYPE] = "application/json";
     }
@@ -128,7 +133,8 @@ export class FloopyHttp {
 
       try {
         const init: RequestInit = { method, headers, signal: controller.signal };
-        if (bodyText !== undefined) init.body = bodyText;
+        if (formBody !== undefined) init.body = formBody;
+        else if (bodyText !== undefined) init.body = bodyText;
         const response = await this.fetchImpl(url, init);
 
         if (!response.ok) {
