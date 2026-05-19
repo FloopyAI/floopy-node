@@ -13,4 +13,10 @@ export const ENDPOINTS = {
   EVALUATION_BY_ID: (id: string) => `/evaluations/${encodeURIComponent(id)}`,
   EVALUATION_RESULTS: (id: string) => `/evaluations/${encodeURIComponent(id)}/results`,
   EVALUATION_CANCEL: (id: string) => `/evaluations/${encodeURIComponent(id)}/cancel`,
+  FILES: "/files",
+  FILE_BY_ID: (id: string) => `/files/${encodeURIComponent(id)}`,
+  FILE_CONTENT: (id: string) => `/files/${encodeURIComponent(id)}/content`,
+  BATCHES: "/batches",
+  BATCH_BY_ID: (id: string) => `/batches/${encodeURIComponent(id)}`,
+  BATCH_CANCEL: (id: string) => `/batches/${encodeURIComponent(id)}/cancel`,
 } as const;

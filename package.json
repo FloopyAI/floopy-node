@@ -34,6 +34,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "lint": "tsc --noEmit",
     "prepublishOnly": "pnpm run build"
   },
@@ -42,10 +43,11 @@
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "@vitest/coverage-v8": "^4.1.5",
     "msw": "^2.14.5",
     "tsup": "^8.5.1",
     "typescript": "^5.9.0",
-    "vitest": "^4.1.5"
+    "vitest": "^4.1.6"
   },
   "keywords": [
     "floopy",

@@ -179,6 +179,40 @@ console.log(explain.wouldSelect, explain.firewallDecision);
 
 Pro plan only. `wouldSelect` is `null` if the firewall blocks the request.
 
+### `files` and `batches`
+
+OpenAI-shaped Batch + Files passthrough. A batch carries no model up
+front, so select the upstream with the `provider` option (sent as the
+`floopy-provider` header) — optional when the key has one provider.
+
+```ts
+const file = await floopy.files.upload(
+  { file: new Blob([jsonl]), filename: "in.jsonl", purpose: "batch" },
+  { provider: "openai" },
+);
+
+const batch = await floopy.batches.create(
+  {
+    input_file_id: file.id,
+    endpoint: "/v1/chat/completions",
+    completion_window: "24h",
+  },
+  { provider: "openai" },
+);
+
+const done = await floopy.batches.retrieve(batch.id, { provider: "openai" });
+if (done.status === "completed" && done.output_file_id) {
+  const out = await floopy.files.content(done.output_file_id, { provider: "openai" });
+  console.log(await out.text());
+}
+
+await floopy.batches.cancel(batch.id, { provider: "openai" });
+await floopy.files.delete(file.id, { provider: "openai" });
+```
+
+`files.list`, `files.retrieve`, and `batches.list` are also available.
+`files.content` returns the raw `Response` so you can stream it.
+
 Per-resource references with full options live under
 <https://floopy.ai/docs/sdk/node>.
 

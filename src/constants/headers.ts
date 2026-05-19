@@ -4,6 +4,7 @@ export const FLOOPY_HEADERS = {
   PROMPT_ID: "Floopy-Prompt-Id",
   PROMPT_VERSION: "Floopy-Prompt-Version",
   LLM_SECURITY_ENABLED: "floopy-llm-security-enabled",
+  PROVIDER: "floopy-provider",
   CONFIRM: "X-Floopy-Confirm",
   REQUEST_ID: "X-Request-Id",
   AUTHORIZATION: "Authorization",
