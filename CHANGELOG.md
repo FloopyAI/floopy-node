@@ -6,6 +6,14 @@ project adheres to [Semantic Versioning](https://semver.org/).
 
 Releases are produced by `release-please` from Conventional Commits.
 
+## [0.4.0](https://github.com/FloopyAI/floopy-node/compare/floopy-sdk-v0.3.0...floopy-sdk-v0.4.0) (2026-05-19)
+
+
+### Added
+
+* add Batch and Files API resources ([8159d77](https://github.com/FloopyAI/floopy-node/commit/8159d77869d54f654718e31f03eedcd22b7e9d01))
+* Batch and Files API ([f557b12](https://github.com/FloopyAI/floopy-node/commit/f557b1239864db8d64089efea694909cb6a9296a))
+
 ## [0.3.0](https://github.com/FloopyAI/floopy-node/compare/floopy-sdk-v0.2.1...floopy-sdk-v0.3.0) (2026-05-17)
 
 
