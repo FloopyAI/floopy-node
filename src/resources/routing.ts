@@ -26,6 +26,8 @@ export class RoutingResource {
     };
     if (params.temperature !== undefined) body.temperature = params.temperature;
     if (params.maxTokens !== undefined) body.max_tokens = params.maxTokens;
+    if (params.maxCompletionTokens !== undefined)
+      body.max_completion_tokens = params.maxCompletionTokens;
     if (params.topP !== undefined) body.top_p = params.topP;
     const opts: { body: unknown; requestOptions?: RequestOptions } = { body };
     if (requestOptions !== undefined) opts.requestOptions = requestOptions;
