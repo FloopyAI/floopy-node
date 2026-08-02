@@ -39,7 +39,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "openai": "^6.37.0"
+    "openai": "^7.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
