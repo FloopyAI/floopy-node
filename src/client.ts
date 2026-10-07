@@ -65,6 +65,11 @@ export class Floopy {
     return this.openai.embeddings;
   }
 
+  /** Native Responses API, with the same Floopy headers and transport options. */
+  get responses(): OpenAI["responses"] {
+    return this.openai.responses;
+  }
+
   get models(): OpenAI["models"] {
     return this.openai.models;
   }

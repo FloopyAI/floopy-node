@@ -70,6 +70,10 @@ export class FloopyHttp {
     return this.apiKey;
   }
 
+  getDelegateOptions() {
+    return { timeout: this.timeout, maxRetries: this.maxRetries, fetch: this.fetchImpl };
+  }
+
   getDefaultRequestHeaders(): Record<string, string> {
     return mergeHeaders(
       this.defaultHeaders,

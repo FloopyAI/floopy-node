@@ -15,6 +15,7 @@ export function createOpenAIDelegate(http: FloopyHttp): OpenAI {
   delete floopyHeaders[FLOOPY_HEADERS.CONTENT_TYPE];
   delete floopyHeaders[FLOOPY_HEADERS.USER_AGENT];
   return new OpenAI({
+    ...http.getDelegateOptions(),
     apiKey,
     baseURL,
     defaultHeaders: {

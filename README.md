@@ -26,7 +26,7 @@ Floopy gateway, so:
 pnpm add floopy-sdk          # or: npm i floopy-sdk / bun add floopy-sdk
 ```
 
-Requires Node `>= 20`.
+Requires Node `>= 22`.
 
 ## Quick start
 
@@ -266,3 +266,9 @@ const floopy = new Floopy({
 ## License
 
 Apache-2.0 © Floopy
+
+## Responses API
+
+Use `client.responses.create(...)` for native `POST /v1/responses`, including reasoning with function tools and typed streaming events. The delegate uses your Floopy base URL, API key and default gateway headers.
+
+This release uses OpenAI Node ^7.28.0. Responses currently routes to compatible OpenAI targets through the existing gateway orchestration. Stateless text caching requires `store: false`; calls with tools or provider-managed history bypass cache. Background jobs and public response-management methods are not exposed by the gateway yet. See [Responses API documentation](https://docs.floopy.ai/docs/api/responses/).
