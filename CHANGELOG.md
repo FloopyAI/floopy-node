@@ -11,6 +11,17 @@ project adheres to [Semantic Versioning](https://semver.org/).
 
 Releases are produced by `release-please` from Conventional Commits.
 
+## [1.0.0](https://github.com/FloopyAI/floopy-node/compare/floopy-sdk-v0.5.0...floopy-sdk-v1.0.0) (2026-10-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js 22 or newer is now required by OpenAI 7.x.
+
+### Added
+
+* expose native Responses API and upgrade OpenAI client ([33f31e7](https://github.com/FloopyAI/floopy-node/commit/33f31e791546161c2f69ea0232d6fc3669baaa27))
+
 ## [0.5.0](https://github.com/FloopyAI/floopy-node/compare/floopy-sdk-v0.4.0...floopy-sdk-v0.5.0) (2026-07-06)
 
 
